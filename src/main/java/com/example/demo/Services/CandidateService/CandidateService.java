@@ -10,13 +10,15 @@ public interface CandidateService {
 
     public Candidate findCandidateByName(String name);
 
-    public Candidate findCandidateByPartyId(Long partyId);
+    public List<Candidate> findCandidateByPartyId(Long partyId);
 
     public List<Candidate> findAll();
 
     public void editCandidateById(Long id, Candidate candidate);
 
     public void addCandidate(Candidate candidate);
+
+    public void addCandidateForSpecificParty(Long partyId, Candidate candidate);
 
     public void deleteCandidate(Long id);
 }

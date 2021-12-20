@@ -30,10 +30,10 @@ public class User {
     @Column(unique = true)
     private Long cpr;
 
-    @Column(unique = true)
+
     private String password;
 
-    private String role;
+    private String role = "user";
 
     public User(String name, String email, Long cpr, String password, String role) {
         this.name = name;

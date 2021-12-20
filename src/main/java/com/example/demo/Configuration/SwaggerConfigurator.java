@@ -15,7 +15,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 @EnableWebMvc
 @Configuration
 @Import(BeanValidatorPluginsConfiguration.class)
-public class SwaggerCongifurator {
+public class SwaggerConfigurator {
 
         @Bean
         public Docket api() {

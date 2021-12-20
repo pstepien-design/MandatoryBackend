@@ -15,7 +15,7 @@ public interface CandidateRepository extends JpaRepository<Candidate, Long> {
 
         public Optional<Candidate> findCandidateByName(String name);
 
-        public Optional<Candidate> findCandidateByPartyId(Long partyId);
+        public List<Candidate> findCandidateByPartyId(Long partyId);
 
         public List<Candidate> findAll();
 

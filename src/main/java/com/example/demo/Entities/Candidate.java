@@ -29,5 +29,8 @@ public class Candidate{
     @ManyToOne
     private Party party;
 
-
+    public Candidate(String name, Party party) {
+        this.name = name;
+        this.party = party;
+    }
 }

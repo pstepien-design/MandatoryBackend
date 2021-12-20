@@ -33,16 +33,25 @@ public class VotingRecords {
     @Column(nullable = false)
     private Long id;
 
+
+
     @OneToOne
     private Candidate candidate;
 
+    @Column(nullable = false)
     private int voteCounter;
 
-    @Column(unique = true)
+    @Column(nullable = false)
     private LocalDate votingDate;
 
     public VotingRecords(Candidate candidate, LocalDate votingDate) {
         this.candidate = candidate;
+        this.votingDate = votingDate;
+    }
+
+    public VotingRecords(Candidate candidate, int voteCounter, LocalDate votingDate) {
+        this.candidate = candidate;
+        this.voteCounter = voteCounter;
         this.votingDate = votingDate;
     }
 }
