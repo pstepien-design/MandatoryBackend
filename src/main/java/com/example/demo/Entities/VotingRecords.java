@@ -25,7 +25,7 @@ import java.time.LocalDate;
         ),
 },
         name = "voting_records",
-        schema = "mandatory"
+        schema = "by0tsq76lc9331ak"
 )
 public class VotingRecords {
     @Id

@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "candidates", schema = "mandatory")
+@Table(name = "candidates", schema = "by0tsq76lc9331ak")
 public class Candidate{
 
     @Id
