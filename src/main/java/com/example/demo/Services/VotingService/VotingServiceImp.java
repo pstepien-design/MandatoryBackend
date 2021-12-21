@@ -25,8 +25,8 @@ public class VotingServiceImp implements VotingService {
     }
 
     @Override
-    public VotingRecords findByCandidateId(Long candidateId) {
-        return votingRepository.findByCandidateId(candidateId).orElseThrow(() -> new RuntimeException("Voting record with this candidateId not found"));
+    public VotingRecords findByPartyId(Long partyId) {
+        return votingRepository.findByPartyId(partyId).orElseThrow(() -> new RuntimeException("Voting record with this partyId not found"));
 
     }
 
@@ -37,8 +37,8 @@ public class VotingServiceImp implements VotingService {
     }
 
     @Override
-    public void incrementVoteCounterByCandidateId(Long candidateId) {
-    VotingRecords myVotingRecords = votingRepository.findByCandidateId(candidateId).orElseThrow(() -> new RuntimeException("Voting record with this candidateId not found"));
+    public void incrementVoteCounterByPartyId(Long partyId) {
+    VotingRecords myVotingRecords = votingRepository.findByPartyId(partyId).orElseThrow(() -> new RuntimeException("Voting record with this partyId not found"));
     myVotingRecords.setVoteCounter(myVotingRecords.getVoteCounter()+1);
     editVotingRecords(myVotingRecords.getId(), myVotingRecords);
     }
@@ -52,7 +52,7 @@ public class VotingServiceImp implements VotingService {
     public void editVotingRecords(Long id, VotingRecords votingRecords) {
     VotingRecords myVotingRecords =  votingRepository.findById(id).orElseThrow(() -> new RuntimeException("Voting record with this id not found"));
     myVotingRecords.setVotingDate(votingRecords.getVotingDate());
-    myVotingRecords.setCandidate(votingRecords.getCandidate());
+    myVotingRecords.setParty(votingRecords.getParty());
     myVotingRecords.setVoteCounter(votingRecords.getVoteCounter());
     votingRepository.save(myVotingRecords);
     }

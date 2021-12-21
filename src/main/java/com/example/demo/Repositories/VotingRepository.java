@@ -15,7 +15,7 @@ public interface VotingRepository extends JpaRepository<VotingRecords, Long> {
 
     public List<VotingRecords> findAll();
 
-    public Optional<VotingRecords> findByCandidateId(Long candidateId);
+    public Optional<VotingRecords> findByPartyId(Long partyId);
 
     public Optional<VotingRecords> findByVotingDate(LocalDate votingDate);
 

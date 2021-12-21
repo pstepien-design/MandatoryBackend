@@ -11,11 +11,11 @@ public interface VotingService {
 
     public VotingRecords findById(Long id);
 
-    public VotingRecords findByCandidateId(Long candidateId);
+    public VotingRecords findByPartyId(Long partyId);
 
     public VotingRecords findByVotingDate(LocalDate votingDate);
 
-    public void incrementVoteCounterByCandidateId(Long candidateId);
+    public void incrementVoteCounterByPartyId(Long partyId);
 
     public void addVotingRecords(VotingRecords votingRecords);
 

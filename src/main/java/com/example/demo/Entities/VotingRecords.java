@@ -21,11 +21,11 @@ import java.time.LocalDate;
 @Table( uniqueConstraints = {
         @UniqueConstraint(
                 name = "UniqueCandidateIdAndDate",
-                columnNames = {"candidate_id", "votingDate"}
+                columnNames = {"votingDate", "party_id"}
         ),
 },
         name = "voting_records",
-        schema = "by0tsq76lc9331ak"
+        schema = "mandatory"
 )
 public class VotingRecords {
     @Id
@@ -36,7 +36,7 @@ public class VotingRecords {
 
 
     @OneToOne
-    private Candidate candidate;
+    private Party party;
 
     @Column(nullable = false)
     private int voteCounter;
@@ -44,13 +44,13 @@ public class VotingRecords {
     @Column(nullable = false)
     private LocalDate votingDate;
 
-    public VotingRecords(Candidate candidate, LocalDate votingDate) {
-        this.candidate = candidate;
+    public VotingRecords(Party party, LocalDate votingDate) {
+        this.party = party;
         this.votingDate = votingDate;
     }
 
-    public VotingRecords(Candidate candidate, int voteCounter, LocalDate votingDate) {
-        this.candidate = candidate;
+    public VotingRecords(Party party, int voteCounter, LocalDate votingDate) {
+        this.party = party;
         this.voteCounter = voteCounter;
         this.votingDate = votingDate;
     }

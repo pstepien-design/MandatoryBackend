@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "candidates", schema = "by0tsq76lc9331ak")
+@Table(name = "candidates", schema = "mandatory")
 public class Candidate{
 
     @Id
@@ -24,6 +24,7 @@ public class Candidate{
     @Column(nullable = false)
     private Long id;
 
+    @Column(nullable = true)
     private String name;
 
     @ManyToOne

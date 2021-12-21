@@ -1,4 +1,4 @@
-package com.example.demo.Controllers;
+package com.example.demo.Controllers.Candidate;
 
 import com.example.demo.Entities.Candidate;
 import io.swagger.annotations.Api;

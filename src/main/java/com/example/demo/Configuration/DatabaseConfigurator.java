@@ -76,25 +76,30 @@ public class DatabaseConfigurator implements CommandLineRunner {
             candidateService.addCandidate(new Candidate("Katrine Høegh Mc Quaid", enhedslisten));
             candidateService.addCandidate(new Candidate("Pia Birkmand", enhedslisten));
 
+            Party dansk = partyService.findPartyByName("Dansk Folkeparti");
+            candidateService.addCandidate(new Candidate("Per Mortensen", dansk));
+
+
 
         }
     }
 
     private void createVotingRecords() {
         if (votingService.findAll().isEmpty()) {
-            Candidate candidate1 = candidateService.findCandidateById(1L);
-            Candidate candidate2 = candidateService.findCandidateById(2L);
-            Candidate candidate3 = candidateService.findCandidateById(3L);
-            Candidate candidate4 = candidateService.findCandidateById(4L);
-            Candidate candidate5 = candidateService.findCandidateById(5L);
-            Candidate candidate6 = candidateService.findCandidateById(6L);
+            Party party1 = partyService.findPartyById(1L);
+            Party party2 = partyService.findPartyById(2L);
+            Party party3 = partyService.findPartyById(3L);
+            Party party4 = partyService.findPartyById(4L);
+            Party party5 = partyService.findPartyById(5L);
+            Party party6 = partyService.findPartyById(6L);
+
             LocalDate date = LocalDate.of(2021, 12, 20);
-            votingService.addVotingRecords(new VotingRecords(candidate1, 250, date));
-            votingService.addVotingRecords(new VotingRecords(candidate2, 200, date));
-            votingService.addVotingRecords(new VotingRecords(candidate3, 209, date));
-            votingService.addVotingRecords(new VotingRecords(candidate4, 100, date));
-            votingService.addVotingRecords(new VotingRecords(candidate5, 50, date));
-            votingService.addVotingRecords(new VotingRecords(candidate6, 300, date));
+            votingService.addVotingRecords(new VotingRecords(party1, 250, date));
+            votingService.addVotingRecords(new VotingRecords(party2, 200, date));
+            votingService.addVotingRecords(new VotingRecords(party3, 209, date));
+            votingService.addVotingRecords(new VotingRecords(party4, 100, date));
+            votingService.addVotingRecords(new VotingRecords(party5, 50, date));
+            votingService.addVotingRecords(new VotingRecords(party6, 300, date));
 
 
         }
